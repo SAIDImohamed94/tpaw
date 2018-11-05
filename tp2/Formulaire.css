@@ -1,0 +1,52 @@
+body{
+	font-family: calibri, serif;
+	font-size: 18px;
+	background-color:rgba(19, 48, 179, 0.486)
+}
+h1{
+  text-align: center;
+  color:beige
+}
+
+/* centrer le formulaire sur la page */
+form{
+	margin: 0 auto;
+  width: 400px;
+
+  padding: 1em;
+  border: 1px solid #332200 ;
+  border-radius: 1em;
+}
+label
+{
+    display: block;
+    width: 140px;
+    float: left;
+}
+#error{
+   margin: 0 auto;
+    width: 400px;
+    width: 32%;
+    padding: 5px;
+    border: 1px solid rgb(102, 102, 102);
+    background: #df7a90;
+  }
+  #resultat{
+    margin: 0 auto;
+    width: 400px;
+    width: 32%;
+    padding: 5px;
+    border: 1px solid rgb(102, 102, 102);
+    background: #41ce4de7;
+    
+  }
+  form{
+    
+    background-color: rgb(250, 249, 249); 
+}
+form input{
+  padding: 10px;
+  font-size: 13 px;
+  width: 80%
+  
+}
