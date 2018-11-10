@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TP3</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    </head>
+    <body>
+            <div class="container"> 
+              <h1>Saisie d'une fiche "Personne"</h1>
+              <form id="formulaire-validation">
+                           
+                <div>   
+                    <input type="text" id="form-fname" name="" required="">
+                    <span class="error_form" id="fname-error-message"></span>
+                    <label>
+                        First Name
+                    </label>
+                
+                </div>
+                <div>
+                        <input type="text" id="form-sname" name="" required="">
+                        <span class="error_form" id="sname-error-message"></span>
+                        <label>
+                            Second Name 
+                        </label>
+
+                </div>
+                <div>
+                        <input type="date" id="form-date" name="" required="">
+                        <span class="error_form" id="date-error-message"></span>
+                        <label>
+                            Date
+                        </label>
+
+                </div>
+                <div>
+                        <input type="text" id="form-adresse" name="" required="">
+                        <span class="error_form" id="adresse-error-message"></span>
+                        <label>
+                            Adresse
+                        </label>
+
+                </div>
+                <div>
+                        <input type="email" id="form-email" name="" required="">
+                        <span class="error_form" id="email-error-message"></span>
+                        <label>
+                            Email
+                        </label>
+
+                </div>
+                
+                <input type="submit" value="Register" name="">
+                </form>
+            </div>
+            <script type="text/javascript">
+            $(function(){
+                $("#fname_error-message").hide();
+                $("#sname_error-message").hide();
+                $("#date_error-message").hide();
+                $("#adress_error-message").hide();
+                $("#email_error-message").hide();
+
+
+                var error_fname = false;
+                var error_sname = false;
+                var error_date = false;
+                var error_adresse = false;
+                var error_email = false;
+
+                $("#form_fname").focusout(function(){
+                    check_fname();
+                });
+                $("#form_sname").focusout(function(){
+                    check_sname();
+                });
+                $("#form_date").focusout(function(){
+                    check_date();
+                });
+                $("#form_adresse").focusout(function(){
+                    check_adresse();
+                });
+                $("#form_email").focusout(function(){
+                    check_email();
+                });
+
+           function check_fname(){
+               var pattern = /^[a-zA-Z]*$/;
+               var fname = $("#form_fname").val()
+               if(pattern.test(fname) && fname !== ''){
+                $("#fname_error-message").hide(); 
+                $("#form_fname").css("border-bottom","2px solid #34F458");
+               }
+               else{
+                $("#fname_error-message").html("doit seulement contenit des caracteres");
+                $("#fname_error-message").show();
+                $("#form_fname").css("border-bottom","2px solid #F90A0A");
+                error_fname = true;
+    
+               }
+           }
+
+            function check_sname(){
+               var pattern = /^[a-zA-Z]*$/;
+               var sname = $("#form_sname").val()
+               if(pattern.test(sname) && sname !== ''){
+                $("#sname_error-message").hide(); 
+                $("#form_sname").css("border-bottom","2px solid #34F458");
+               }
+               else{
+                $("#sname_error-message").html("doit seulement contenit des caracteres");
+                $("#sname_error-message").show();
+                $("#form_sname").css("border-bottom","2px solid #F90A0A");
+                error_sname = true;
+    
+               }
+
+           }
+           function check_adresse(){
+               var pattern = /^[a-zA-Z 1-9]*$/;
+               var sname = $("#form_sname").val()
+               if(pattern.test(sname) && sname !== ''){
+                $("#sname_error-message").hide(); 
+                $("#form_sname").css("border-bottom","2px solid #34F458");
+               }
+               else{
+                $("#sname_error-message").html("doit seulement contenit des caracteres");
+                $("#sname_error-message").show();
+                $("#form_sname").css("border-bottom","2px solid #F90A0A");
+                error_sname = true;
+    
+               }
+               
+           }
+            }
+            </script>
+                
+           
+    </body>
+</html>
