@@ -1,101 +1,61 @@
-$().ready(function() {
-    $("#mainForm").validate({
-    rules : {
-      nom : {
-        required : true
-      },
-      prenom : {
-        minlength : 3
-      },	
-      email : {
-        required : true,
-        email : true
-      }
-    },
-    messages : {
-      nom : "Veuillez fournir un nom",
-      prenom : "Veuillez fournir un prenom d'au moins trois lettres",
-      email : "L'email est incorrect"
-    }
-   });
-  });
+$(document).ready(function () {
+
+    //date();
+    $("#Valider").on("click", function (e) {
+        e.preventDefault();
+
+        // ce code est exécuter une fois que toute la page est téléchargée par le navigateur
+        // voir plus : https://www.w3schools.com/js/js_htmldom.asp
+        console.log("DOM ready!");
+
+        // Y mettre le code jQuery pour valider tous les champs du formulaire
 
 
 
 
+        if ($('#nom').val().length < 5 || $('#nom').val() == "") { // si la chaîne de caractères est inférieure à 5
+            $('#myModal').modal("show");
+        }
 
 
+        else if ($('#prenom').val().length < 5 || $('#prenom').val() == "") { // si la chaîne de caractères est inférieure à 5
+            $('#myModal').modal("show");
+        }
 
 
+        else if ($('#date').val().length < 5 || $('#date').val() == "") { // si la chaîne de caractères est inférieure à 5
+            $('#myModal').modal("show");
+        }
 
 
+        else if ($('#adresse').val().length < 5 || $('#adresse').val() == "") { // si la chaîne de caractères est inférieure à 5
+            $('#myModal').modal("show");
+        }
+        else if ($('#mail').val().length < 5 || $('#mail').val() == "") { // si la chaîne de caractères est inférieure à 5
+            $('#myModal').modal("show");
+        }
+        else {
+            $('#myModal2').modal("show");
+            document.getElementById('welcome').innerHTML= "Bienvenue  "+ document.querySelector("#prenom").value;
+            document.getElementById('message').innerHTML= "Vous etes nés le  "+ document.querySelector("#date").value +" et vous habitez ";
+            document.getElementById('message2').innerHTML=  document.querySelector("#adresse").value ;
 
-
-
-
-
-
-
-
-
-
-
-
-/*
-        $(document).ready(function(){
-    
-            var $nom = $('#nom'),
-                $prenom = $('#prenom'),
-                $date = $('#date'),
-                $Adresse = $('#Adresse'),
-                $email = $('#email'),
-                $envoi = $('#envoi'),
-                $erreur = $('#erreur'),
-                $champ = $('.champ');
+            
         
-            $champ.keyup(function(){
-                if($(nom).val().length < 5){ // si la chaîne de caractères est inférieure à 5
-                    $(nom).css({ // on rend le champ rouge
-                        borderColor : 'red',
-                    color : 'red'
-                    });
-                 }
-                 else{
-                     $(nom).css({ // si tout est bon, on le rend vert
-                     borderColor : 'green',
-                     color : 'green'
-                 });
-                 }
-            });
-        
-            $envoi.click(function(e){
-                e.preventDefault(); // on annule la fonction par défaut du bouton d'envoi
-        
-                // puis on lance la fonction de vérification sur tous les champs :
-                verifier($nom);
-                verifier($prenom);
-                verifier($date);
-                verifier($Adresse);
-                verifier($email);
-            });
-        
-            $reset.click(function(){
-                $champ.css({ // on remet le style des champs comme on l'avait défini dans le style CSS
-                    borderColor : '#ccc',
-                    color : '#555'
-                });
-                $erreur.css('display', 'none'); // on prend soin de cacher le message d'erreur
-            });
-        
-            function verifier(champ){
-                if(champ.val() == ""){ // si le champ est vide
-                    $erreur.css('display', 'block'); // on affiche le message d'erreur
-                    champ.css({ // on rend le champ rouge
-                        borderColor : 'red',
-                        color : 'red'
-                    });
-                }
-            }
-        
+        var urls = document.querySelectorAll('.mapUrl');
+
+        [].forEach.call(urls, function (item) {
+            // do whatever
+            item.setAttribute("href", "http://maps.google.com/maps?q="+document.querySelector("#adresse").value);
         });
-        */
+
+        }
+
+
+
+
+
+       
+
+    });
+});
