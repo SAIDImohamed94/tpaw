@@ -1,3 +1,4 @@
+
 function validation ( )
 {
     document.getElementById("resultat").setAttribute("hidden",'hidden');
@@ -31,4 +32,4 @@ function validation ( )
 
  }
 
-    
+
