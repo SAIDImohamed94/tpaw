@@ -13,6 +13,8 @@ body {
 }
 .card {
   margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
   width: 400px;
 }
 h4{
